@@ -7,6 +7,11 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+# The full path to the repository root.
+BASE = Path(__file__).absolute().ancestor(2)
+# sensitive data
+SECRETS = json.load(open(BASE.parent.child('secrets.json')))
+
 MANAGERS = ADMINS
 
 DATABASES = {
